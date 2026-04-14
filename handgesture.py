@@ -4,7 +4,7 @@ import math
 import socket
 import time
 
-ESP32_IP = "192.168.29.246"
+ESP32_IP = "192.168.xx.xxx"
 ESP32_PORT = 80
 
 mp_hands = mp.solutions.hands
@@ -44,7 +44,7 @@ while True:
             brightness = int((length - 30) / (200 - 30) * 255)
             brightness = max(0, min(255, brightness))
 
-            # 🔥 send only if changed
+            #  send only if changed
             if abs(brightness - prev_value) > 5:
                 send_value(brightness)
                 prev_value = brightness
